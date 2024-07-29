@@ -20,9 +20,8 @@ export function CountriesList() {
     <Divider>
       <Row gutter={48}>
         {paginatedData?.map((country) => (
-          <Col span={6}>
+          <Col span={6} key={country.name.common}>
             <Country
-              key={country.name.common}
               name={country.name.common}
               population={country.population}
               region={country.region}
