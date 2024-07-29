@@ -38,7 +38,9 @@ export function Country({
             </Typography.Title>
           </div>
         </div>
-        <Button type='primary'>Full information</Button>
+        <Button type='primary' href={`/country/${name}`}>
+          Full information
+        </Button>
       </Divider>
     </Divider>
   );
