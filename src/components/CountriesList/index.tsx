@@ -1,9 +1,12 @@
 import { Col, Divider, Pagination, Row } from 'antd';
 import { useCountriesData } from '../../utils/useCountriesData';
 import { Country } from './Country';
+import { Loading } from '../Loading';
 
 export function CountriesList() {
-  const { data } = useCountriesData();
+  const { data, isLoading } = useCountriesData();
+
+  if (isLoading) return <Loading />;
 
   return (
     <Divider>
