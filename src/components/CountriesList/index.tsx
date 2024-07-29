@@ -10,7 +10,7 @@ export function CountriesList() {
 
   return (
     <Divider>
-      <Row>
+      <Row gutter={[0, 48]}>
         {data?.map((country) => (
           <Col span={6}>
             <Country
