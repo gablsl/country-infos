@@ -1,30 +1,40 @@
 import { Button, Divider, Image, Typography } from 'antd';
 
-export function Country() {
+type CountryType = {
+  name: string;
+  population: number;
+  region: string;
+  capital: string[];
+  flagUrl: string;
+};
+
+export function Country({
+  name,
+  population,
+  region,
+  capital,
+  flagUrl,
+}: CountryType) {
   return (
     <Divider orientation='center'>
-      <Image
-        src='https://flagcdn.com/w320/br.png'
-        width={200}
-        preview={false}
-      />
+      <Image src={flagUrl} width={200} preview={false} />
       <Divider orientation='center'>
-        <Typography.Title level={2}>Brazil</Typography.Title>
+        <Typography.Title level={2}>{name}</Typography.Title>
 
         <div>
           <div>
             <Typography.Title level={4}>
-              Population: <Typography.Text>212559409</Typography.Text>
+              Population: <Typography.Text>{population}</Typography.Text>
             </Typography.Title>
           </div>
           <div>
             <Typography.Title level={4}>
-              Region: <Typography.Text>America</Typography.Text>
+              Region: <Typography.Text>{region}</Typography.Text>
             </Typography.Title>
           </div>
           <div>
             <Typography.Title level={4}>
-              Capital: <Typography.Text>Brasília</Typography.Text>
+              Capital: <Typography.Text>{capital}</Typography.Text>
             </Typography.Title>
           </div>
         </div>
